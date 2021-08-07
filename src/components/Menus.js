@@ -1,34 +1,31 @@
 import React, {useState, useEffect} from "react";
+import Hero from "./Hero";
+import SpecialDishes from "./SpecialDishes";
 
 function Menus(){
 
-    let [menu, setMenu] = useState([])
+    let [menu, setMenu] = useState([]);
 
-    async function getAllMenus(){
+    async function getAllTheMenus(){
         const API_URL = "https://www.themealdb.com/api/json/v1/1/search.php?f=a"
-        let response = await fetch(API_URL)
-        let data = await response.json()
-        setMenu(data.meals)
+        let response = await fetch(API_URL);
+        let data = await response.json();
+        setMenu(data.meals);
     }
 
     useEffect(()=>{
-        getAllMenus()
-    },[])
+        getAllTheMenus();
+    },[]);
 
-     let menuImages = menu.map((item)=>{
-        return(
-            <div>
-                <img src={item.strMealThumb} />
-                <h2>{item.strCategory}</h2>
-            </div>
-        )
-    })
+     
 
     return(
         <div>
-            {menuImages}
-        </div>
-    )
+            <Hero />
+            <SpecialDishes specialMenu={menu} />
+        </div>  
+        )
+    
 }
 
 export default Menus;

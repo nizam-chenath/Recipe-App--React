@@ -1,5 +1,7 @@
+import React, { useState, useEffect} from "react";
+
 import Menus from "./components/Menus";
-import "./App.css"
+import "./App.scss";
 
 function App(){
   return (

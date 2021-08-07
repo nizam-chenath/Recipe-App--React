@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+}
+p{
+  font-size: 16px;
+  line-height: 24px;
+}
+
+// Website font sizes
+h1{
+  margin-bottom: 18px;
+  font-size: 38px;
+
+}
+h2{
+  margin-bottom: 18px;
+  font-size: 32px;
+
+}
+h3{
+  margin-bottom: 18px;
+  font-size: 28px;
+
+}
+h4{
+  margin-bottom: 18px;
+  font-size: 22px;
+
+}
+h5{
+  margin-bottom: 22px;
+  font-size: 18px;
+
+}
+ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.text-center{
+  text-align: center;
+}
+.container{
+  max-width: 1000px;
+  margin: auto;
+}
+section{
+  margin: 100px 0;
+}
+.flex{
+  display: flex;
+
+  &.flex-wrap{
+    flex-wrap: wrap;
+  }
+
+  &.flex-center{
+    align-items: center;
+    justify-content: center;
+  }
+}
+.gap-30{
+  gap: 30px;
+}
+
+.br-10{
+  border-radius: 10px;
+}
+.App {
+  text-align: center;
+}
+img{
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.hero{
+  position: relative;
+  height: 65vh;
+  overflow: hidden;
+
+  &-content{
+    max-width: 400px;
+    position: absolute;
+    right: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+
+
+    h2, p{
+      text-shadow:  3px 4px 7px #dad3d3;
+    }
+  }
+}
+
+//Special-dishes CSS
+.special-dishes{
+  &-content {
+    max-width: 680px;
+    margin: auto;
+  }
+  &-list{
+    margin-top: 60px;
+
+    h5{
+      margin-top: 18px;
+    }
+    li{
+      width: 22%;
+    }
+  }
+}
