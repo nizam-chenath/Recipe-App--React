@@ -1,6 +1,4 @@
 function SpecialDishes(props){
-    
-    console.log("props : ", props.specialMenu)
 
     let maxSpecialDishes = 8;
     
@@ -12,7 +10,7 @@ function SpecialDishes(props){
                     <h5>{menuItem.strMeal}</h5>
                     
                 </li>
-        )
+            )
         }
       
     })
@@ -22,7 +20,7 @@ function SpecialDishes(props){
            <div className="container">
                <div className="special-dishes-content text-center">
                <h2>Our Special Dishes</h2>
-               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est obcaecati impedit dolorum eius sint non incidunt? Veritatis alias vel incidunt voluptates magni repudiandae ullam quam?</p>
+               <h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est obcaecati impedit dolorum eius sint non incidunt? Veritatis alias vel incidunt voluptates magni repudiandae ullam quam?</h6>
                </div>
                <div className="special-dishes-list">
                    <ul className="flex flex-wrap gap-30">
@@ -35,4 +33,4 @@ function SpecialDishes(props){
 }
 
 
-export default SpecialDishes
+export default SpecialDishes;
