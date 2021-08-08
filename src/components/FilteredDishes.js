@@ -6,9 +6,11 @@ function FilteredDishes(props) {
 
   let [allMenus, setAllMenus] = useState(props.allMenus)
   let [filteredDishes, setFilteredDishes] = useState([])
+  let [activeDish, setActiveDish] = useState()
 
   //show dishes on click
   function showFilterdDishesHandler (category){
+    setActiveDish(category)
     let filteredDishesAre = allMenus.filter((item)=>{
       return item.strCategory === category
     }).map((item)=>{
@@ -25,7 +27,7 @@ function FilteredDishes(props) {
   //let show all the categories
     let allCategories = props.allMenuCategories.map((item)=>{
       return(
-        <li onClick={()=>{showFilterdDishesHandler(item.strCategory)}}>{item.strCategory}</li>
+        <li className={item.strCategory== activeDish ? "active" : ""} onClick={()=>{showFilterdDishesHandler(item.strCategory)}}>{item.strCategory}</li>
       )
     })
 
@@ -42,7 +44,7 @@ function FilteredDishes(props) {
                 </div>
                 <div className="filterd-dishes-results">
                   <ul className="flex flex-wrap gap-30">
-                    {filteredDishes}
+                    {filteredDishes.length > 1 ?   {filteredDishes}: <div className="alert"></div>}
                   </ul>
                 </div>
             </div>
