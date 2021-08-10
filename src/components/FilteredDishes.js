@@ -1,15 +1,27 @@
 import React, {useState} from 'react';
+import Pagination from './Pagination';
 
 function FilteredDishes(props) {
 
-  console.log("menu:", props.allMenus)
+  console.log("single dishes", props.singleDish)
 
   let [allMenus, setAllMenus] = useState(props.allMenus)
   let [filteredDishes, setFilteredDishes] = useState([])
-  let [activeDish, setActiveDish] = useState()
+  let [activeDish, setActiveDish] = useState("Beef")
+
+  //show only single dishes
+  let singleDishItems = props.singleDish.map((item)=>{
+    return(
+      <li>
+        <img src={item.strMealThumb} className="br-10" alt="" />
+        <h5>{item.strMeal}</h5>
+      </li>
+    )  
+  })
 
   //show dishes on click
   function showFilterdDishesHandler (category){
+    props.setSingleDish([])
     setActiveDish(category)
     let filteredDishesAre = allMenus.filter((item)=>{
       return item.strCategory === category
@@ -44,9 +56,15 @@ function FilteredDishes(props) {
                 </div>
                 <div className="filterd-dishes-results">
                   <ul className="flex flex-wrap gap-30">
-                    {filteredDishes.length > 1 ?   {filteredDishes}: <div className="alert"></div>}
+                    {singleDishItems}
+                    {filteredDishes.length != 0 ?   filteredDishes : 
+                    <div className="alert">
+                        <h3>Sorry,No Items Found</h3>
+                        <h4>Please choose another dishes:)</h4>
+                    </div>}
                   </ul>
                 </div>
+                <Pagination/>
             </div>
     </div>;
     
