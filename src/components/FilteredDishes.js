@@ -8,6 +8,14 @@ function FilteredDishes(props) {
   let [allMenus, setAllMenus] = useState(props.allMenus)
   let [filteredDishes, setFilteredDishes] = useState([])
   let [activeDish, setActiveDish] = useState("Beef")
+  let [currentPage, setCurrentPage] = useState(1)
+  let [itemsPerPage, setItemsPerPage] = useState(4)
+
+  let indexOfLastDish = currentPage + itemsPerPage;
+
+  let indexOfFirstDish = indexOfLastDish - itemsPerPage;
+
+  let showThisDishesNow = filteredDishes.slice(indexOfFirstDish, indexOfLastDish)
 
   //show only single dishes
   let singleDishItems = props.singleDish.map((item)=>{
@@ -57,14 +65,18 @@ function FilteredDishes(props) {
                 <div className="filterd-dishes-results">
                   <ul className="flex flex-wrap gap-30">
                     {singleDishItems}
-                    {filteredDishes.length != 0 ?   filteredDishes : 
+                    {filteredDishes.length != 0 ?   showThisDishesNow : 
                     <div className="alert">
                         <h3>Sorry,No Items Found</h3>
                         <h4>Please choose another dishes:)</h4>
                     </div>}
                   </ul>
                 </div>
-                <Pagination/>
+                <Pagination 
+                filteredDishes = {filteredDishes}
+                itemsPerPage = {itemsPerPage}
+                currentPage = {currentPage}
+                > </Pagination>
             </div>
     </div>;
     
