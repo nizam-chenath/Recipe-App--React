@@ -7,13 +7,14 @@ function Pagination(props) {
        numberOfPages.push(i);
     }
     
-    function showNextDishesHandler (){
-        console.log("net dishes when click")
+    function showNextDishesHandler(event){
+        let CurrentPage = event.target.id
+        props.setCurrentPage(CurrentPage)
     }
 
-    let pages = numberOfPages.map((item) => {
+    let pages = numberOfPages.map((pageNumber) => {
         return(
-            <li onClick={showNextDishesHandler}>{item}</li>
+            <li id={pageNumber} onClick={showNextDishesHandler}>{pageNumber}</li>
         )
     });
     
