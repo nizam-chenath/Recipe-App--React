@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import Hero from "./Hero";
+import Hero from "./Hero.jsx";
 import SpecialDishes from "./SpecialDishes";
 import FilteredDishes from "./FilteredDishes";
 import Loader from "./Loader";

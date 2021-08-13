@@ -1,19 +1,16 @@
+import CardDish from "./CardDish";
+
 function SpecialDishes(props){
 
     let maxSpecialDishes = 8;
     
     let specialMenus = props.specialMenu.map((menuItem, index)=>{
         if(index < maxSpecialDishes){
-            return(
-                <li>
-                    <img src= {menuItem.strMealThumb} className="br-10" />
-                    <h5>{menuItem.strMeal}</h5>
-                    
-                </li>
-            )
+            return   <CardDish menuItem = {menuItem}/>;
+            
         }
       
-    })
+    });
 
     return(
        <section className="special-dishes">
