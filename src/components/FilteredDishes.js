@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Pagination from './Pagination';
+import CardDish from './CardDish';
 
 function FilteredDishes(props) {
 
@@ -14,19 +15,24 @@ function FilteredDishes(props) {
   let indexOfLastDish = currentPage * 4;
 
   let indexOfFirstDish = indexOfLastDish - 4;
- console.log("currentPage", currentPage)
+   //  console.log("currentPage", currentPage)
   let showThisDishesNow = filteredDishes.slice(indexOfFirstDish, indexOfLastDish)
 
-console.log("haloo" + indexOfFirstDish,indexOfLastDish);
+  // console.log("haloo" + indexOfFirstDish,indexOfLastDish);
 
   //show only single dishes
-  let singleDishItems = props.singleDish.map((item)=>{
-    return(
-      <li>
-        <img src={item.strMealThumb} className="br-10" alt="" />
-        <h5>{item.strMeal}</h5>
-      </li>
-    )  
+
+  let maxItem = 6
+  let singleDishItems = props.singleDish.map((item, index)=>{
+    if(index < maxItem){
+      return(
+        <li>
+          <img src={item.strMealThumb} className="br-10" alt="" />
+          <h5>{item.strMeal}</h5>
+        </li>
+      )  
+    }
+   
   })
 
   //show dishes on click
@@ -35,12 +41,9 @@ console.log("haloo" + indexOfFirstDish,indexOfLastDish);
     setActiveDish(category)
     let filteredDishesAre = allMenus.filter((item)=>{
       return item.strCategory === category
-    }).map((item)=>{
+    }).map((menuItem)=>{
       return(
-        <li>
-          <img src={item.strMealThumb} className="br-10" alt="" />
-          <h5>{item.strMeal}</h5>
-        </li>
+       <CardDish menuItem={menuItem}/>
       )
     })
     setFilteredDishes(filteredDishesAre)

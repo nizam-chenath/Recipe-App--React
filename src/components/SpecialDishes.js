@@ -1,6 +1,10 @@
+import { useState } from "react";
 import CardDish from "./CardDish";
+import Popup from "./Popup";
 
 function SpecialDishes(props){
+
+    let [showPopup, setShowPopup] = useState(false);
 
     let maxSpecialDishes = 8;
     
@@ -13,7 +17,9 @@ function SpecialDishes(props){
     });
 
     return(
+    
        <section className="special-dishes">
+           <Popup/>
            <div className="container">
                <div className="special-dishes-content text-center">
                <h2>Our Special Dishes</h2>
