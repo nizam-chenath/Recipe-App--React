@@ -237,26 +237,72 @@ img{
     width: 800px;
     height: 600px;
     border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    padding: 20px;
   }
   
   &-close{
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 25px;
+    right: 25px;
     color: white;
-    font-weight: 600;
-    font-size: 14px;
+    font-weight: 1000;
+    font-size: 22px;
     cursor: pointer;
     transition: all ease 0.3s;
   
     &:hover{
       color: #ff4848;
+    } 
+  }
+  button{
+    border: none;
+    outline: none;
+    background-color: #ffb902;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 6px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 24px;
+    transition: all ease 0.3s;
+
+    &:hover{
+      background-color: #ff4848;
+    }
+  }
+  .popup-image{
+    height: 30vh;
+    overflow: hidden;
+    margin-bottom: 30px;
+    position: relative;
+
+    &-category{
+      background: #fff2d0;
+      color: black;
+      margin: 0;
+      padding: 12px;
+      border-radius: 6px;
+      position: absolute;
+      bottom: 25px;
+      left: 25px;
+
+    }
+    img{
+      width: 100%;
+      height: 100%;
     }
   }
 }
 
+.dish-ingredients{
+  li{
+    background: white;
+    padding: 8px 12px;
+    border-radius: 32px;
+    font-size: 14px;
+    margin-right: 12px;
+  }
+}
 
