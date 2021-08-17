@@ -228,14 +228,20 @@ img{
   align-items: center;
   justify-content: center;
 
-  h2{
+  h2,p{
     color: white;
 
+  }
+  p{
+    font-size: 12px;
+    margin-bottom: 22px;
+    height: 155px;
+    overflow-y: scroll;
   }
   &-content{
     background-color: #000;
     width: 800px;
-    height: 600px;
+    height: 700px;
     border-radius: 5px;
     padding: 20px;
   }
@@ -269,7 +275,7 @@ img{
     transition: all ease 0.3s;
 
     &:hover{
-      background-color: #ff4848;
+      background-color: #34ff34;
     }
   }
   .popup-image{
@@ -297,6 +303,7 @@ img{
 }
 
 .dish-ingredients{
+  margin-bottom: 22px;
   li{
     background: white;
     padding: 8px 12px;

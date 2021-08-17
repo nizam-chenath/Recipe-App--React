@@ -1,8 +1,11 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import { AllMenuContext } from './AllMenuContext'
 
 function Popup({closePopupHandler, currentDish, fullMenu}) {
+   
+    const allMenu = useContext(AllMenuContext)
 
-    let dishDetails = fullMenu.filter((menuItem)=>{
+    let dishDetails = allMenu.filter((menuItem)=>{
          return menuItem.strMeal == currentDish
     }).map((item)=>{
         return(
@@ -12,6 +15,9 @@ function Popup({closePopupHandler, currentDish, fullMenu}) {
                 <h5 className="popup-image-category">{item.strCategory}</h5>
                 </div>
                 <h2>{item.strMeal}</h2>
+                <p>{item.strInstructions}</p>
+
+
                 <ul className="dish-ingredients flex">
                     <li>{item.strIngredient1}</li>
                     <li>{item.strIngredient2}</li>
