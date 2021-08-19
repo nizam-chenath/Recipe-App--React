@@ -1,6 +1,6 @@
 import React , {useState, useEffect} from 'react'
 import Loader from './Loader';
-import SpecialDishes from './SpecialDishes';
+
 
 export const AllMenuContext = React.createContext()
 
@@ -23,8 +23,8 @@ export const AllMenu = (props)=>{
     },[]);
     return(
         <AllMenuContext.Provider value={menu}>
-             {!loading ?    <SpecialDishes  />  : <Loader/>}
-            {props.children}
+             {!loading ?   props.children : <Loader/>}
+            
         </AllMenuContext.Provider>
     )
 }
