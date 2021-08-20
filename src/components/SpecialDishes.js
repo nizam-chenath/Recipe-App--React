@@ -8,7 +8,7 @@ import { AllMenuContext } from "./AllMenuContext";
 function SpecialDishes(props){
     let [showPopup, setShowPopup] = useState(false);
     let [currentDish, setCurrentDish] = useState('')
-    let [addToCartItem, setAddToCartItem] = useState([{}])
+    let [addToCartItem, setAddToCartItem] = useState([])
 
     
 
